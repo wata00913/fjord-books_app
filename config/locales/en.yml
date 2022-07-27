@@ -50,3 +50,8 @@ en:
       base: "%{value}"
       new: "Create Book"
       edit: "Update Book"
+    message:
+      success:
+        create: "created"
+        update: "updated"
+        destroy: "destroyed"
