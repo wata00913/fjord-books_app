@@ -51,6 +51,7 @@ en:
       new: "Create Book"
       edit: "Update Book"
     message:
+      confirm: "Are you sure?"
       success:
         base: "Book was successfully %{action}."
         create: "created"

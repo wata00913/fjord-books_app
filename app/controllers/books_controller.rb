@@ -81,6 +81,7 @@ class BooksController < ApplicationController
     @head_locales = t 'book.heading'
     @attr_locales = t 'book.attr'
     @link_locales = t 'book.action'
+    @confirm_message_locale = t('book.message.confirm')
   end
 
   def set_new_and_create_locales

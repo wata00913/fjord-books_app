@@ -20,6 +20,7 @@ ja:
       new: "本を新規作成する"
       edit: "本を更新する"
     message:
+      confirm: "本当によろしいですか？"
       success:
         base: "本の%{action}に成功しました。"
         create: "作成"
