@@ -52,6 +52,7 @@ en:
       edit: "Update Book"
     message:
       success:
+        base: "Book was successfully %{action}."
         create: "created"
         update: "updated"
         destroy: "destroyed"
