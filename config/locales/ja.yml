@@ -15,3 +15,7 @@ ja:
       show: "詳細"
       destroy: "削除"
       back: "戻る"
+    submit:
+      base: "%{value}"
+      new: "本を新規作成する"
+      edit: "本を更新する"

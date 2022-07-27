@@ -3,6 +3,8 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
   before_action :common_locales
+  before_action :new_locales, only: :new
+  before_action :edit_locales, only: :edit
 
   # GET /books
   # GET /books.json
@@ -78,5 +80,13 @@ class BooksController < ApplicationController
     @head_locales = t 'book.heading'
     @attr_locales = t 'book.attr'
     @link_locales = t 'book.action'
+  end
+
+  def new_locales
+    @submit_locales = t('book.submit.base', value: t('book.submit.new'))
+  end
+
+  def edit_locales
+    @submit_locales = t('book.submit.base', value: t('book.submit.edit'))
   end
 end

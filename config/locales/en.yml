@@ -46,3 +46,7 @@ en:
       edit: "Edit"
       destroy: "Destroy"
       back: "Back"
+    submit: 
+      base: "%{value}"
+      new: "Create Book"
+      edit: "Update Book"
