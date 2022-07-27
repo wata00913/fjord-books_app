@@ -20,10 +20,6 @@ ja:
       new: "本を新規作成する"
       edit: "本を更新する"
     message:
-      base: "本の%{action}に成功しました。"
-      create: "作成"
-      update: "更新"
-      destroy: "削除"
       success:
         base: "本の%{action}に成功しました。"
         create: "作成"
