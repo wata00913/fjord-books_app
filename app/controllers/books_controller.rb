@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
   before_action :head_locales
   before_action :attr_locales
+  before_action :link_locales
 
   # GET /books
   # GET /books.json
@@ -81,5 +82,9 @@ class BooksController < ApplicationController
 
   def attr_locales
     @attr_locales = t 'book.attr'
+  end
+
+  def link_locales
+    @link_locales = t 'book.action'
   end
 end

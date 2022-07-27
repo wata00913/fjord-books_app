@@ -9,3 +9,9 @@ ja:
       memo: "メモ"
       author: "著者"
       picture: "画像"
+    action:
+      new: "新規"
+      edit: "編集"
+      show: "詳細"
+      destroy: "削除"
+      back: "戻る"

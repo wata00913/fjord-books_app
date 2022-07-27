@@ -40,3 +40,9 @@ en:
       memo: "Memo"
       author: "Author"
       picture: "Picture"
+    action:
+      new: "New Book"
+      show: "Edit"
+      edit: "Edit"
+      destroy: "Destroy"
+      back: "Back"
