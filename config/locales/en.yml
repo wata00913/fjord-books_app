@@ -35,3 +35,8 @@ en:
       index: "Books"
       new: "New Book"
       edit: "Editing Book"
+    attr:
+      title: "Title"
+      memo: "Memo"
+      author: "Author"
+      picture: "Picture"

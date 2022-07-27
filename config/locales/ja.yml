@@ -4,3 +4,8 @@ ja:
       index: "本一覧"
       new: "新規"
       edit: "編集"
+    attr:
+      title: "タイトル"
+      memo: "メモ"
+      author: "著者"
+      picture: "画像"
