@@ -11,7 +11,7 @@ en:
       picture: "Picture"
     action:
       new: "New Book"
-      show: "Edit"
+      show: "Show"
       edit: "Edit"
       destroy: "Destroy"
       back: "Back"
