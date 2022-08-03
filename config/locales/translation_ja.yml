@@ -9,3 +9,7 @@ ja:
         memo: メモ  #g
         picture: 画像  #g
         title: 題名  #g
+  views:
+    pagination:
+      next: 次へ
+      previous: 前へ
