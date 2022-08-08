@@ -2,7 +2,6 @@
 
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
-  before_action :set_common_locales
   before_action :set_new_and_create_locales, only: %i[new create]
   before_action :set_edit_and_update_locales, only: %i[edit update]
   before_action :set_destroy_locales, only: :destroy
@@ -70,9 +69,6 @@ class BooksController < ApplicationController
   # Only allow a list of trusted parameters through.
   def book_params
     params.require(:book).permit(:title, :memo, :author, :picture)
-  end
-
-  def set_common_locales
   end
 
   def set_new_and_create_locales
