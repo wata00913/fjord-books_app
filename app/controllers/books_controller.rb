@@ -72,12 +72,10 @@ class BooksController < ApplicationController
   end
 
   def set_new_and_create_locales
-    @submit_locales = t('book.submit.base', value: t('book.submit.new'))
     @success_message_locale = t('book.message.success', deep_interpolation: true, action: t('book.message.success.create'))
   end
 
   def set_edit_and_update_locales
-    @submit_locales = t('book.submit.base', value: t('book.submit.edit'))
     @success_message_locale = t('book.message.success', deep_interpolation: true, action: t('book.message.success.update'))
   end
 

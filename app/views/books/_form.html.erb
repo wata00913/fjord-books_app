@@ -32,6 +32,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit @submit_locales %>
+    <%= form.submit t("book.submit.#{controller.action_name}") %>
   </div>
 <% end %>
