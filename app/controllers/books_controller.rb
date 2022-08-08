@@ -73,7 +73,6 @@ class BooksController < ApplicationController
   end
 
   def set_common_locales
-    @head_locales = t 'book.heading'
     @attr_locales = t 'book.attr'
     @link_locales = t 'book.action'
     @confirm_message_locale = t('book.message.confirm')
