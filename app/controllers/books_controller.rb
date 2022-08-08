@@ -2,9 +2,6 @@
 
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
-  before_action :set_new_and_create_locales, only: %i[new create]
-  before_action :set_edit_and_update_locales, only: %i[edit update]
-  before_action :set_destroy_locales, only: :destroy
 
   # GET /books
   # GET /books.json
@@ -69,21 +66,5 @@ class BooksController < ApplicationController
   # Only allow a list of trusted parameters through.
   def book_params
     params.require(:book).permit(:title, :memo, :author, :picture)
-  end
-
-  def set_new_and_create_locales
-    @success_message_locale = t('book.message.success', deep_interpolation: true, action: t('book.message.success.create'))
-  end
-
-  def set_edit_and_update_locales
-    @success_message_locale = t('book.message.success', deep_interpolation: true, action: t('book.message.success.update'))
-  end
-
-  def set_destroy_locales
-    @success_message_locale = t('book.message.success', deep_interpolation: true, action: t('book.message.success.destroy'))
-  end
-
-  def set_success_message_locale
-    @success_message_locale[:base]
   end
 end
