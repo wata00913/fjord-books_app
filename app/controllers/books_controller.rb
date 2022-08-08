@@ -73,7 +73,6 @@ class BooksController < ApplicationController
   end
 
   def set_common_locales
-    @confirm_message_locale = t('book.message.confirm')
   end
 
   def set_new_and_create_locales
