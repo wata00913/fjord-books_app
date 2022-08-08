@@ -20,5 +20,5 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= link_to @link_locales[:edit], edit_book_path(@book) %> |
-<%= link_to @link_locales[:back], books_path %>
+<%= link_to t('book.action.edit'), edit_book_path(@book) %> |
+<%= link_to t('book.action.back'), books_path %>
