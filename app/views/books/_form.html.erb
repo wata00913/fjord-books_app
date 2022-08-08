@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title, @attr_locales[:title] %>
+    <%= form.label :title, t('book.attr.title') %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :memo, @attr_locales[:memo] %>
+    <%= form.label :memo, t('book.attr.memo') %>
     <%= form.text_area :memo %>
   </div>
 
   <div class="field">
-    <%= form.label :author, @attr_locales[:author] %>
+    <%= form.label :author, t('book.attr.author') %>
     <%= form.text_field :author %>
   </div>
 
   <div class="field">
-    <%= form.label :picture, @attr_locales[:picture] %>
+    <%= form.label :picture, t('book.attr.picture') %>
     <%= form.file_field :picture %>
   </div>
 
