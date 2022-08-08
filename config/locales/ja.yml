@@ -1,14 +1,16 @@
 ja:
+  activerecord:
+    attributes:
+      book:
+        title: "タイトル"
+        memo: "メモ"
+        author: "著者"
+        picture: "画像"
   book:
     heading:
       index: "本一覧"
       new: "新規"
       edit: "編集"
-    attr:
-      title: "タイトル"
-      memo: "メモ"
-      author: "著者"
-      picture: "画像"
     action:
       new: "新規"
       edit: "編集"

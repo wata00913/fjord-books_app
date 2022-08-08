@@ -1,14 +1,16 @@
 en:
+  activerecord:
+    attributes:
+      book:
+        title: "Title"
+        memo: "Memo"
+        author: "Author"
+        picture: "Picture"
   book:
     heading:
       index: "Books"
       new: "New Book"
       edit: "Editing Book"
-    attr:
-      title: "Title"
-      memo: "Memo"
-      author: "Author"
-      picture: "Picture"
     action:
       new: "New Book"
       show: "Show"
