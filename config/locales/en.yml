@@ -22,7 +22,6 @@ en:
     message:
       confirm: "Are you sure?"
       success:
-        base: "Book was successfully %{action}."
-        create: "created"
-        update: "updated"
-        destroy: "destroyed"
+        create: "Book was successfully created."
+        update: "Book was successfully updated."
+        destroy: "Book was successfully destroyed."

@@ -22,7 +22,6 @@ ja:
     message:
       confirm: "本当によろしいですか？"
       success:
-        base: "本の%{action}に成功しました。"
-        create: "作成"
-        update: "更新"
-        destroy: "削除"
+        create: "本の作成に成功しました。"
+        update: "本の更新に成功しました。"
+        destroy: "本の削除に成功しました。"
