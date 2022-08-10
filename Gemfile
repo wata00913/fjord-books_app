@@ -60,4 +60,5 @@ gem 'net-pop'
 gem 'net-smtp'
 
 gem 'carrierwave'
+gem 'devise'
 gem 'kaminari'
