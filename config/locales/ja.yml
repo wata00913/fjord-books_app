@@ -8,22 +8,22 @@ ja:
         picture: "画像"
   book:
     heading:
-      index: "本一覧"
-      new: "新規"
-      edit: "編集"
+      index: "書籍一覧"
+      new: "新刊"
+      edit: "編集書籍"
     action:
-      new: "新規"
-      edit: "編集"
+      new: "新刊"
       show: "詳細"
+      edit: "編集"
       destroy: "削除"
       back: "戻る"
     submit:
       base: "%{value}"
-      new: "本を新規作成する"
-      edit: "本を更新する"
+      new: "書籍を新規作成する"
+      edit: "書籍を更新する"
     message:
       confirm: "本当によろしいですか？"
       success:
-        create: "本の作成に成功しました。"
-        update: "本の更新に成功しました。"
-        destroy: "本の削除に成功しました。"
+        create: "書籍の作成に成功しました。"
+        update: "書籍の更新に成功しました。"
+        destroy: "書籍の削除に成功しました。"
