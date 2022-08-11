@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= User.model_name.human %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.email, user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
