@@ -19,4 +19,6 @@
   <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
   <%= @user.self_introduction %>
 </p>
-<%= link_to 'edit', edit_user_registration_path(@user) if @user == current_user %>
+<% if @user == current_user  %>
+  <%= link_to 'account edit', edit_user_registration_path(@user) %> 
+<% end %>
