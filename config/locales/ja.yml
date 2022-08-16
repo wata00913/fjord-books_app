@@ -1,11 +1,20 @@
 ja:
   activerecord:
+    models:
+      book: "書籍"
     attributes:
       book:
         title: "タイトル"
         memo: "メモ"
         author: "著者"
         picture: "画像"
+  common:
+    message:
+      confirm: "本当によろしいですか？"
+      success:
+        create: "%{model}の作成に成功しました。"
+        update: "%{model}の更新に成功しました。"
+        destroy: "%{model}の削除に成功しました。"
   book:
     heading:
       index: "書籍一覧"
@@ -20,9 +29,3 @@ ja:
     submit:
       new: "書籍を新規作成する"
       edit: "書籍を更新する"
-    message:
-      confirm: "本当によろしいですか？"
-      success:
-        create: "書籍の作成に成功しました。"
-        update: "書籍の更新に成功しました。"
-        destroy: "書籍の削除に成功しました。"
