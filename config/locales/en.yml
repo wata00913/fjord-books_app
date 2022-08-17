@@ -24,6 +24,3 @@ en:
       edit: "Edit"
       destroy: "Destroy"
       back: "Back"
-    submit: 
-      new: "Create Book"
-      edit: "Update Book"

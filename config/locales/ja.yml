@@ -8,6 +8,10 @@ ja:
         memo: "メモ"
         author: "著者"
         picture: "画像"
+  helpers:
+    submit:
+      create: "%{model}を新規作成する"
+      update: "%{model}を更新する"
   common:
     message:
       confirm: "本当によろしいですか？"
@@ -26,6 +30,3 @@ ja:
       edit: "編集"
       destroy: "削除"
       back: "戻る"
-    submit:
-      new: "書籍を新規作成する"
-      edit: "書籍を更新する"

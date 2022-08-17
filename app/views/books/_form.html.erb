@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title, Book.human_attribute_name(:title) %>
+    <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :memo, Book.human_attribute_name(:memo) %>
+    <%= form.label :memo %>
     <%= form.text_area :memo %>
   </div>
 
   <div class="field">
-    <%= form.label :author, Book.human_attribute_name(:author) %>
+    <%= form.label :author %>
     <%= form.text_field :author %>
   </div>
 
   <div class="field">
-    <%= form.label :picture, Book.human_attribute_name(:picture) %>
+    <%= form.label :picture %>
     <%= form.file_field :picture %>
   </div>
 
   <div class="actions">
-    <%= form.submit t("book.submit.#{controller.action_name}") %>
+    <%= form.submit %>
   </div>
 <% end %>
