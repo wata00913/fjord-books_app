@@ -11,5 +11,5 @@ ja:
         title: 題名  #g
   views:
     pagination:
-      next: 次へ
-      previous: 前へ
+      next: "次へ &rsaquo;"
+      previous: "&lsaquo; 前へ"
