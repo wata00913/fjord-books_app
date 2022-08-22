@@ -19,11 +19,10 @@ ja:
         create: "%{model}の作成に成功しました。"
         update: "%{model}の更新に成功しました。"
         destroy: "%{model}の削除に成功しました。"
-  book:
     heading:
-      index: "書籍の一覧"
-      new: "書籍の新規作成"
-      edit: "書籍の編集"
+      index: "一覧"
+      new: "新規作成"
+      edit: "編集"
     action:
       new: "新規"
       show: "詳細"

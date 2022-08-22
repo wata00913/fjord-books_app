@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t('book.heading.index') %></h1>
+<h1><%= t('common.heading.index') %></h1>
 
 <table>
   <thead>
@@ -20,9 +20,9 @@
         <td><%= book.memo %></td>
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
-        <td><%= link_to t('book.action.show'), book %></td>
-        <td><%= link_to t('book.action.edit'), edit_book_path(book) %></td>
-        <td><%= link_to t('book.action.destroy'), book, method: :delete, data: { confirm: t('common.message.confirm') } %></td>
+        <td><%= link_to t('common.action.show'), book %></td>
+        <td><%= link_to t('common.action.edit'), edit_book_path(book) %></td>
+        <td><%= link_to t('common.action.destroy'), book, method: :delete, data: { confirm: t('common.message.confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to t('book.action.new'), new_book_path %>
+<%= link_to t('common.action.new'), new_book_path %>
