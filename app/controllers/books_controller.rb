@@ -28,7 +28,6 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        I18n.translate
         format.html { redirect_to @book, notice: t('common.message.success.create', model: Book.model_name.human) }
         format.json { render :show, status: :created, location: @book }
       else
