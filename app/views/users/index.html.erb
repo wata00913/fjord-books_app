@@ -26,3 +26,6 @@
 <%= paginate @users %>
 
 <br>
+
+<%= link_to  "書籍一覧", books_path %><br />
+<%= link_to  "Sign out", destroy_user_session_path(current_user), method: :delete if user_signed_in? %><br />
