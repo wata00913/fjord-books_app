@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[post_code phone_number self_introduction])
     devise_parameter_sanitizer.permit(:account_update, keys: %i[post_code phone_number self_introduction])
   end
+
+  private
+
+  # デフォルトではルートパスを返すのでログイン画面を指定。
+  def after_sign_out_path_for(_resource_or_scope)
+    new_user_session_path
+  end
 end
