@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= t('views.common.title_detail', name: User.model_name.human) %></h1>
 <p>
   <strong><%= User.human_attribute_name(:email) %>:</strong>
   <%= @user.email %>
@@ -20,5 +21,5 @@
   <%= @user.self_introduction %>
 </p>
 <% if @user == current_user  %>
-  <%= link_to 'account edit', edit_user_registration_path(@user) %> 
+  <%= link_to t('views.common.edit'), edit_user_registration_path(@user) %> 
 <% end %>
