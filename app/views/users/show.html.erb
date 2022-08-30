@@ -20,6 +20,6 @@
   <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
   <%= @user.self_introduction %>
 </p>
-<% if @user == current_user  %>
-  <%= link_to t('views.common.edit'), edit_user_registration_path(@user) %> 
+<% if @user == current_user %>
+  <%= link_to t('views.common.edit'), edit_user_registration_path(@user) %>
 <% end %>
