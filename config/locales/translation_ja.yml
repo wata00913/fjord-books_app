@@ -9,12 +9,3 @@ ja:
         memo: メモ  #g
         picture: 画像  #g
         title: 題名  #g
-
-      user:
-        phone_number: 電話番号  #g
-        post_code: 郵便番号  #g
-        self_introduction: 自己紹介  #g
-  views:
-    link:
-      sessions:
-        sign_out: サインアウト
