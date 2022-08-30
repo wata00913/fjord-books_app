@@ -1,4 +1,4 @@
-<h2><%= t('users.common.log_in') %></h2>
+<h2><%= t('devise.common.log_in') %></h2>
 
 <p id="notice"><%= notice %>
 <p id="alert"><%= alert %>
@@ -10,7 +10,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password, t('users.common.password') %><br />
+    <%= f.label :password, t('devise.common.password') %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
@@ -22,8 +22,8 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit t('users.common.log_in') %>
+    <%= f.submit t('devise.common.log_in') %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "devise/shared/links" %>

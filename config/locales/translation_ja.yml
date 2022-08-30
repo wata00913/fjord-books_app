@@ -22,15 +22,22 @@ ja:
     link:
       sessions:
         sign_out: サインアウト
-  users:
+  devise:
+    passwords:
+      send_instructions: 数分後にパスワードの再設定方法を記載したメールが届きます。
+      updated: パスワードの変更に成功しました。現在、サインインした状態です。
+    failure:
+      not_found_in_database: "%{authentication_keys}またはパスワードが無効です。"
+    sessions:
+      signed_in: サインインに成功しました。
+      signed_out: サインアウトに成功しました。
+      new:
+        remember_me: ログインしたままにする
     common:
       password: パスワード
       log_in: ログイン
       sign_up: サインアップ
       forgot_password: パスワードを忘れましたか？
-    sessions:
-      new:
-        remember_me: ログインしたままにする
     passwords:
       new:
         send_me: パスワードを再発行します
@@ -45,12 +52,3 @@ ja:
         confirmation_description: 変更を確認するために、現在のパスワードを入力してください。
         current_password: 現在のパスワード
         cancel_my_account: アカウントをキャンセルする
-  devise:
-    passwords:
-      send_instructions: 数分後にパスワードの再設定方法を記載したメールが届きます。
-      updated: パスワードの変更に成功しました。現在、サインインした状態です。
-    failure:
-      not_found_in_database: "%{authentication_keys}またはパスワードが無効です。"
-    sessions:
-      signed_in: サインインに成功しました。
-      signed_out: サインアウトに成功しました。
