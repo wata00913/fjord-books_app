@@ -2,7 +2,6 @@ ja:
   activerecord:
     models:
       book: 本  #g
-      user: ユーザー  #g
 
     attributes:
       book:
@@ -12,43 +11,10 @@ ja:
         title: 題名  #g
 
       user:
-        email: Eメール  #g
-        encrypted_password: 暗号化パスワード  #g
         phone_number: 電話番号  #g
         post_code: 郵便番号  #g
-        reset_password_token: パスワードトークンのリセット  #g
         self_introduction: 自己紹介  #g
   views:
     link:
       sessions:
         sign_out: サインアウト
-  devise:
-    passwords:
-      send_instructions: 数分後にパスワードの再設定方法を記載したメールが届きます。
-      updated: パスワードの変更に成功しました。現在、サインインした状態です。
-    failure:
-      not_found_in_database: "%{authentication_keys}またはパスワードが無効です。"
-    sessions:
-      signed_in: サインインに成功しました。
-      signed_out: サインアウトに成功しました。
-      new:
-        remember_me: ログインしたままにする
-    common:
-      password: パスワード
-      log_in: ログイン
-      sign_up: サインアップ
-      forgot_password: パスワードを忘れましたか？
-    passwords:
-      new:
-        send_me: パスワードを再発行します
-    registrations:
-      new:
-        minimum_password_length: 最小%{length}文字
-        password_confirmation: パスワードの確認
-      edit:
-        blank_description: 変更しない場合は空白にしてください。
-        minimum_password_length: 最小%{length}文字
-        password_confirmation: パスワードの確認
-        confirmation_description: 変更を確認するために、現在のパスワードを入力してください。
-        current_password: 現在のパスワード
-        cancel_my_account: アカウントをキャンセルする
