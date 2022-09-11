@@ -64,6 +64,18 @@ User.transaction do
       self_introduction: "こんにちは、#{name}です。"
     )
   end
+  FollowRelationship.create!(
+    following_id: 1,
+    followed_id: 2
+  )
+  FollowRelationship.create!(
+    following_id: 1,
+    followed_id: 3
+  )
+  FollowRelationship.create!(
+    following_id: 2,
+    followed_id: 1
+  )
 end
 
 # 画像は読み込みに時間がかかるので一部のデータだけにする
