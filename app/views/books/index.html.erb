@@ -32,4 +32,7 @@
 
 <br>
 
-<%= link_to t('views.common.new'), new_book_path %>
+<%= link_to t('views.common.new'), new_book_path %> <br>
+<%= link_to t('views.common.index', model: User.model_name.human), users_path %> <br>
+
+<%= link_to  t('devise.other.links.sign_out'), destroy_user_session_path, method: :delete if user_signed_in? %><br />

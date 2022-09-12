@@ -207,6 +207,7 @@ ja:
     pm: 午後
   views:
     common:
+      index: "%{model}"
       show: 詳細
       edit: 編集
       destroy: 削除
@@ -214,6 +215,7 @@ ja:
       back: 戻る
       delete_confirm: よろしいですか？
       title_new: "%{name}の新規作成"
+      title_detail: "%{name}の詳細"
       title_edit: "%{name}の編集"
     pagination:
       first: '最初'
