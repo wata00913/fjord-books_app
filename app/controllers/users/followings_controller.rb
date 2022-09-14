@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 class Users::FollowingsController < ApplicationController
-  before_action :set_other, only: %i[create destroy]
+  before_action :set_other, only: %i[index create destroy]
+
+  # GET users/:user_id/followings
+  def index
+    @followed_users = @other.followings
+    render 'index'
+  end
 
   # POST users/:user_id/followings
   def create
