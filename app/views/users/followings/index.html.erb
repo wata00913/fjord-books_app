@@ -1,5 +1,6 @@
 <h1><%= 'フォロー一覧' %></h1>
 
+<%= 'フォローしたユーザーはいません。' if @other.count_following == 0 %>
 <table>
   <thead>
     <tr>
