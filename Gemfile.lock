@@ -317,10 +317,12 @@ DEPENDENCIES
   devise-i18n
   faker
   i18n_generators
+  image_processing (~> 1.2)
   jbuilder (~> 2.7)
   kaminari
   letter_opener_web
   listen (~> 3.3)
+  mini_magick
   net-imap
   net-pop
   net-smtp
