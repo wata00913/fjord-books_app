@@ -17,7 +17,7 @@
     <% @reports.each do |report| %>
       <tr>
         <td><%= report.title %></td>
-        <td><% %></td>
+        <td><%= name_or_email report.user %></td>
         <td><%= report.created_at %></td>
         <td><%= report.updated_at %></td>
         <td><%= link_to 'Show', report %></td>
