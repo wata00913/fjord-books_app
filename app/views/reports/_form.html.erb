@@ -13,17 +13,12 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, required: :required %>
   </div>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :posting_user_id %>
-    <%= form.number_field :posting_user_id %>
+    <%= form.text_area :content %>
   </div>
 
   <div class="actions">
