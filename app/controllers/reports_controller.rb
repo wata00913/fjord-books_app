@@ -19,10 +19,8 @@ class ReportsController < ApplicationController
 
   # POST /reports or /reports.json
   def create
-    @report = Report.new(report_params)
-
     # ログインユーザーが投稿者となる
-    set_posting_user(current_user)
+    @report = current_user.reports.create(report_params)
 
     if @report.save
       redirect_to report_url(@report), notice: 'Report was successfully created.'
@@ -52,10 +50,6 @@ class ReportsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_report
     @report = Report.find(params[:id])
-  end
-
-  def set_posting_user(user)
-    @report.posting_user_id = user.id
   end
 
   # Only allow a list of trusted parameters through.
