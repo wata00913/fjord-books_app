@@ -23,9 +23,11 @@
 <strong>内容</strong>
 </p>
 
-<p>
-  <%= @report.content %>
-</p>
+<div style="border: 3px solid #cc4343; margin: 20px;">
+  <% @report.content.each_line(chomp: true) do |line| %>
+    <%= tag.p line %>
+  <% end %>
+</div>
 
 <% if current_user == @report.user %>
   <button onclick="location.href=<%= "'#{edit_report_path(@report)}'" %>">編集</button>
