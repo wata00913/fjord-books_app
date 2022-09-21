@@ -1,0 +1,10 @@
+<%= form_with model: [report, new_comment] do |comment_form| %>
+  <div class="field">
+    <%= comment_form.label :content %>
+    <%= comment_form.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= comment_form.submit %>
+  </div>
+<% end %>
