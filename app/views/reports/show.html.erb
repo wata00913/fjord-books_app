@@ -37,6 +37,6 @@
 
 <%= render 'comments/show', comments: @comments %>
 
-<%= render 'comments/form', report: @report, new_comment: @new_comment %>
+<%= render 'comments/form', commentable: @report, new_comment: @new_comment %>
 
 <%= link_to '戻る', reports_path %>
