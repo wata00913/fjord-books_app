@@ -1,6 +1,5 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
-  helper_method :name_or_email
 
   # GET /reports or /reports.json
   def index
@@ -48,10 +47,6 @@ class ReportsController < ApplicationController
     @report.destroy
 
     redirect_to reports_url, notice: 'Report was successfully destroyed.'
-  end
-
-  def name_or_email(posting_user)
-    posting_user.name.nil? ? posting_user.email : posting_user.name
   end
 
   private
