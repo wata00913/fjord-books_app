@@ -11,6 +11,8 @@ class Reports::CommentsController < ApplicationController
     if @new_comment.save
       redirect_to @report
     else
+      # 関連付けのオブジェクトがDBの状態と同期してないのでリセットする
+      @comments.reload
       render 'reports/show'
     end
   end
