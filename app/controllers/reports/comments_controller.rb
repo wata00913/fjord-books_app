@@ -8,13 +8,8 @@ class Reports::CommentsController < ApplicationController
     @new_comment = @comments.build(comment_params)
     @new_comment.commenter = current_user
 
-    if @new_comment.save
-      redirect_to @report
-    else
-      # 関連付けのオブジェクトがDBの状態と同期してないのでリセットする
-      @comments.reload
-      render 'reports/show'
-    end
+    flash[:alert] = @new_comment.errors.full_messages.to_sentence unless @new_comment.save
+    redirect_to @report
   end
 
   private
