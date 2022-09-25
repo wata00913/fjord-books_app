@@ -13,6 +13,9 @@
           <%= tag.p line %>
         <% end %>
       </p>
+      <% if current_user == comment.commenter %>
+        <%= link_to t('views.common.destroy'), polymorphic_path([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+      <% end %>
     </div>
   <% end %>
 <% end %>

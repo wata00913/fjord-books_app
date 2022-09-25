@@ -10,6 +10,13 @@ class CommentsController < ApplicationController
     redirect_to commentable
   end
 
+  def destroy(commentable, comment_id)
+    destroyed = commentable.comments.find(comment_id)
+    commentable.comments.destroy(destroyed)
+
+    flash[:notice] = 'コメントは削除されました'
+  end
+
   private
 
   def comment_params
