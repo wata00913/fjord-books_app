@@ -5,10 +5,10 @@
 
 <p>
   <strong>投稿日時:</strong>
-  <%= @report.created_at %>
+  <%= @report.created_at.to_formatted_s(:long) %>
 
   <strong>更新日時:</strong>
-  <%= @report.updated_at %>
+  <%= @report.updated_at.to_formatted_s(:long) %>
 </p>
 
 <p>

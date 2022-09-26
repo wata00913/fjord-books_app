@@ -16,8 +16,8 @@
       <tr>
         <td><%= report.title %></td>
         <td><%= name_or_email report.user %></td>
-        <td><%= report.created_at %></td>
-        <td><%= report.updated_at %></td>
+        <td><%= report.created_at.to_formatted_s(:long) %></td>
+        <td><%= report.updated_at.to_formatted_s(:long) %></td>
         <td><%= link_to 'Show', report %></td>
       </tr>
     <% end %>
