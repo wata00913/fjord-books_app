@@ -3,6 +3,8 @@ ja:
     models:
       book: 本  #g
       user: ユーザ
+      report: 日報
+      comment: コメント
 
     attributes:
       book:
@@ -16,3 +18,22 @@ ja:
         address: 住所
         self_introduction: 自己紹介文
         avatar: ユーザ画像
+      report:
+        title: タイトル
+        content: 内容
+        posting_user_id: 投稿者
+        created_at: 投稿日時
+        updated_at: 更新日時
+      comment:
+        content: 内容
+  reports:
+    edit:
+      header: 日報の編集
+    new:
+      header: 日報の作成
+  helpers:
+    submit:
+      report:
+        create: 投稿する
+      comment:
+        create: 投稿する

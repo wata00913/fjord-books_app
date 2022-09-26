@@ -5,7 +5,7 @@
     <div style="border: 3px solid #cc4343; margin: 20px;">
       <p>
         <%= name_or_email comment.commenter %>
-        <%= comment.updated_at.to_formatted_s(:long) %>
+        <%= l comment.updated_at, format: :long %>
       </p>
 
       <p>

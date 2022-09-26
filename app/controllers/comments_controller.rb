@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     destroyed = commentable.comments.find(comment_id)
     commentable.comments.destroy(destroyed)
 
-    flash[:notice] = 'コメントは削除されました'
+    flash[:notice] = t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
