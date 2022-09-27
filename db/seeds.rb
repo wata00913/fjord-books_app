@@ -44,6 +44,7 @@ end
 
 User.destroy_all
 
+image_sample = { io: picture_file('cho-nyumon.jpg'), filename: 'cho-nyumon.jpg' }
 50.times do |n|
   name = Faker::Name.name
   User.create!(
@@ -52,7 +53,8 @@ User.destroy_all
     name: name,
     postal_code: "123-#{n.to_s.rjust(4, '0')}",
     address: Faker::Address.full_address,
-    self_introduction: "こんにちは、#{name}です。"
+    self_introduction: "こんにちは、#{name}です。",
+    image: n == 1 ? image_sample : nil
   )
 end
 
