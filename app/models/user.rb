@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   def follow(other)
     if following?(other)
-      errors.add(:id, message: 'フォロー済みです')
+      errors.add(:id, :already_follow)
       return nil
     end
 
@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   def unfollow(other)
     unless following?(other)
-      errors.add(:id, message: 'フォロー解除済みです')
+      errors.add(:id, :already_unfollow)
       return nil
     end
 

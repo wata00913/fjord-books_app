@@ -12,7 +12,7 @@ class Users::FollowingsController < ApplicationController
   # POST users/:user_id/followings
   def create
     if current_user.follow(@other)
-      redirect_to @other, notice: 'フォローしました'
+      redirect_to @other, notice: t('.notice')
     else
       redirect_to @other, flash: { alert: set_first_message_to_flash(current_user, :id) }
     end
@@ -21,7 +21,7 @@ class Users::FollowingsController < ApplicationController
   # DELETE users/followings/1
   def destroy
     if current_user.unfollow(@other)
-      redirect_to @other, notice: 'フォロー解除しました'
+      redirect_to @other, notice: t('.notice')
     else
       redirect_to @other, flash: { alert: set_first_message_to_flash(current_user, :id) }
     end

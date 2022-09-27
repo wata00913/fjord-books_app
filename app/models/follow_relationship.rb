@@ -4,6 +4,6 @@ class FollowRelationship < ApplicationRecord
   validate :must_be_other, on: :create
 
   def must_be_other
-    errors.add(:followed_id, message: '自身をフォローできません') if following_id == followed_id
+    errors.add(:followed_id, :must_be_other) if following_id == followed_id
   end
 end

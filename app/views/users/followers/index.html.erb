@@ -1,6 +1,6 @@
-<h1><%= 'フォローワ一覧' %></h1>
+<h1><%= t '.header' %></h1>
 
-<%= 'フォローワーはいません。' if @other.count_follower == 0 %>
+<%= t '.not_exists' if @other.count_follower == 0 %>
 <table>
   <thead>
     <tr>
