@@ -8,10 +8,10 @@ class User < ApplicationRecord
 
   has_many :following_relationships, -> { order(:created_at) },
            class_name: 'FollowRelationship', foreign_key: :following_id,
-           dependent: :destroy
+           dependent: :destroy, inverse_of: :following
   has_many :follower_relationships, -> { order(:created_at) },
            class_name: 'FollowRelationship', foreign_key: :followed_id,
-           dependent: :destroy
+           dependent: :destroy, inverse_of: :followed
   has_many :followings, through: :following_relationships, source: :followed
   has_many :followers, through: :follower_relationships, source: :following
 
