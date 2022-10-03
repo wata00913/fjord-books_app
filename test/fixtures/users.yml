@@ -1,11 +1,25 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+alice:
+  id: 1
+  email: sample-0@example.com
+  name: Alice
+  postal_code: 999-9999
+  address: 福岡県丸々市
+  self_introduction: はじめまして
+bob:
+  id: 2
+  email: sample-1@example.com
+  name: Bob
+  postal_code: 999-9999
+  address: 熊本県丸々市
+  self_introduction: はじめまして
+carol:
+  id: 3
+  email: sample-3@example.com
+  name: Carol
+  postal_code: 999-9999
+  address: 鹿児島県丸々市
+  self_introduction: はじめまして
+anonymous:
+  id: 4
+  email: sample-4@example.com
+  self_introduction: 情報は非公開です
