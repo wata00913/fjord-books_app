@@ -14,7 +14,7 @@ class Users::FollowingsController < ApplicationController
     if current_user.follow(@user)
       redirect_to @user, notice: t('.notice')
     else
-      redirect_to @user, flash: { alert: first_error_message(current_user, :id) }
+      redirect_to @user, flash: { alert: current_user.errors.map(&:message).join('\n') }
     end
   end
 
@@ -23,7 +23,7 @@ class Users::FollowingsController < ApplicationController
     if current_user.unfollow(@user)
       redirect_to @user, notice: t('.notice')
     else
-      redirect_to @user, flash: { alert: first_error_message(current_user, :id) }
+      redirect_to @user, flash: { alert: current_user.errors.map(&:message).join('\n') }
     end
   end
 
@@ -31,9 +31,5 @@ class Users::FollowingsController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-  end
-
-  def first_error_message(model, attribute)
-    model.errors.where(attribute).first.message
   end
 end

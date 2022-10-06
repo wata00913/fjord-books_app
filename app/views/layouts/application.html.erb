@@ -33,10 +33,10 @@
       </div>
     <% end %>
     <% if notice.present? %>
-      <p id="notice"><%= notice %></p>
+      <%= simple_format notice, id: :notice %>
     <% end %>
     <% if alert.present? %>
-      <p id="alert"><%= alert %></p>
+      <%= simple_format alert, id: :alert %>
     <% end %>
     <%= yield %>
   </body>
