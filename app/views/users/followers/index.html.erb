@@ -1,25 +1,11 @@
 <h1><%= t '.header' %></h1>
 
-<%= t '.not_exists' if @user.followers.count == 0 %>
-<table>
-  <thead>
-    <tr>
-      <th><%= User.human_attribute_name(:email) %></th>
-      <th><%= User.human_attribute_name(:name) %></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @follwers.each do |follwer| %>
-      <tr>
-        <td><%= follwer.email %></td>
-        <td><%= follwer.name %></td>
-        <td><%= link_to t('views.common.show'), user_path(follwer) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if @user.followers.count == 0 %>
+  <%= t '.not_exists' %>
+  <br>
+<% else %>
+  <%= render 'users/follow_relationships/users_table', users: @user.followers %>
+<% end %>
 
 <%= link_to t('views.common.back'), user_path(@user) %>
 <br>
