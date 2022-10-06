@@ -36,12 +36,4 @@ class User < ApplicationRecord
   def following?(other)
     followings.exists?(other.id)
   end
-
-  def count_following
-    followings.count
-  end
-
-  def count_follower
-    followers.count
-  end
 end

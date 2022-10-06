@@ -64,17 +64,20 @@ User.transaction do
       self_introduction: "こんにちは、#{name}です。"
     )
   end
+
+  sampling_users = User.order(:id).limit(3)
+
   FollowRelationship.create!(
-    following_id: 1,
-    followed_id: 2
+    following_id: sampling_users[0].id,
+    followed_id: sampling_users[1].id
   )
   FollowRelationship.create!(
-    following_id: 1,
-    followed_id: 3
+    following_id: sampling_users[0].id,
+    followed_id: sampling_users[2].id
   )
   FollowRelationship.create!(
-    following_id: 2,
-    followed_id: 1
+    following_id: sampling_users[1].id,
+    followed_id: sampling_users[0].id
   )
 end
 

@@ -1,12 +1,12 @@
 <h1><%= t '.header' %></h1>
 
-<%= t '.not_exists' if @other.count_follower == 0 %>
+<%= t '.not_exists' if @other.followers.count == 0 %>
 <table>
   <thead>
     <tr>
       <th><%= User.human_attribute_name(:email) %></th>
       <th><%= User.human_attribute_name(:name) %></th>
-      <th colspan="2"></th>
+      <th></th>
     </tr>
   </thead>
 
