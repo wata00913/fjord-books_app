@@ -1,36 +1,36 @@
 # frozen_string_literal: true
 
 class Users::FollowingsController < ApplicationController
-  before_action :set_other, only: %i[index create destroy]
+  before_action :set_user, only: %i[index create destroy]
 
   # GET users/:user_id/followings
   def index
-    @followed_users = @other.followings
+    @followed_users = @user.followings
     render 'index'
   end
 
   # POST users/:user_id/followings
   def create
-    if current_user.follow(@other)
-      redirect_to @other, notice: t('.notice')
+    if current_user.follow(@user)
+      redirect_to @user, notice: t('.notice')
     else
-      redirect_to @other, flash: { alert: first_error_message(current_user, :id) }
+      redirect_to @user, flash: { alert: first_error_message(current_user, :id) }
     end
   end
 
   # DELETE users/followings/1
   def destroy
-    if current_user.unfollow(@other)
-      redirect_to @other, notice: t('.notice')
+    if current_user.unfollow(@user)
+      redirect_to @user, notice: t('.notice')
     else
-      redirect_to @other, flash: { alert: first_error_message(current_user, :id) }
+      redirect_to @user, flash: { alert: first_error_message(current_user, :id) }
     end
   end
 
   private
 
-  def set_other
-    @other = User.find(params[:id])
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def first_error_message(model, attribute)

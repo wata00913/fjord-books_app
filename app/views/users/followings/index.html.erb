@@ -1,6 +1,6 @@
 <h1><%= t '.header' %></h1>
 
-<%= t '.not_exists' if @other.followings.count == 0 %>
+<%= t '.not_exists' if @user.followings.count == 0 %>
 <table>
   <thead>
     <tr>
@@ -21,5 +21,5 @@
   </tbody>
 </table>
 
-<%= link_to t('views.common.back'), user_path(@other) %>
+<%= link_to t('views.common.back'), user_path(@user) %>
 <br>
