@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 class Users::FollowersController < ApplicationController
-  before_action :set_other, only: %i[index]
+  before_action :set_user, only: %i[index]
 
   def index
-    @follwers = @other.followers
+    @follwers = @user.followers
     render 'index'
   end
 
   private
 
-  def set_other
-    @other = User.find(params[:id])
+  def set_user
+    @user = User.find(params[:id])
   end
 end
