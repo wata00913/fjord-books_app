@@ -2,20 +2,18 @@
 
 <% unless comments.empty? %>
   <% comments.each  do |comment| %>
-    <div style="border: 3px solid #cc4343; margin: 20px;">
+    <div>
       <p>
         <%= name_or_email comment.commenter %>
-        <%= l comment.updated_at, format: :long %>
+        <%= l comment.updated_at %>
       </p>
 
-      <p>
-        <% comment.content.each_line(chomp: true) do |line| %>
-          <%= tag.p line %>
-        <% end %>
-      </p>
+      <%= simple_format comment.content %>
+
       <% if current_user == comment.commenter %>
         <%= link_to t('views.common.destroy'), polymorphic_path([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
       <% end %>
     </div>
   <% end %>
 <% end %>
+

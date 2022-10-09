@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   include UsersHelper
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :switch_timezone
 
   protected
 
@@ -12,11 +11,6 @@ class ApplicationController < ActionController::Base
     keys = %i[name postal_code address self_introduction avatar]
     devise_parameter_sanitizer.permit(:sign_up, keys: keys)
     devise_parameter_sanitizer.permit(:account_update, keys: keys)
-  end
-
-  def switch_timezone
-    tz = ActiveSupport::TimeZone[cookies[:tz]]
-    Time.zone = tz.nil? ? default_tz : tz.name
   end
 
   private
@@ -31,9 +25,5 @@ class ApplicationController < ActionController::Base
 
   def signed_in_root_path(_resource_or_scope)
     user_path(current_user)
-  end
-
-  def default_tz
-    'Asia/Tokyo'
   end
 end

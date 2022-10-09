@@ -20,7 +20,7 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= render 'comments/show', commentable: @book, comments: @comments %>
+<%= render 'comments/index', commentable: @book, comments: @comments %>
 
 <%= render 'comments/form', commentable: @book, new_comment: @new_comment %>
 
