@@ -1,19 +1,20 @@
+<% comments = commentable.comments.includes(:user).order(:created_at) %>
+
 <h2><%= Comment.model_name.human %></h2>
 
 <% unless comments.empty? %>
   <% comments.each  do |comment| %>
     <div>
       <p>
-        <%= name_or_email comment.commenter %>
+        <%= comment.user.name_or_email %>
         <%= l comment.updated_at %>
       </p>
 
       <%= simple_format comment.content %>
 
-      <% if current_user == comment.commenter %>
+      <% if current_user == comment.user %>
         <%= link_to t('views.common.destroy'), polymorphic_path([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
       <% end %>
     </div>
   <% end %>
 <% end %>
-

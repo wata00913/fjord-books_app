@@ -6,7 +6,7 @@ class Books::CommentsController < ApplicationController
   def create
     @comments = @book.comments
     @new_comment = @comments.build(comment_params)
-    @new_comment.commenter = current_user
+    @new_comment.user = current_user
 
     flash[:alert] = @new_comment.errors.full_messages.to_sentence unless @new_comment.save
 
