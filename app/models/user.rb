@@ -33,6 +33,6 @@ class User < ApplicationRecord
   end
 
   def name_or_email
-    name.nil? ? email : name
+    name || email
   end
 end

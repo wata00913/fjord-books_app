@@ -4,20 +4,16 @@ class Books::CommentsController < ApplicationController
   before_action :set_book, only: %i[create destroy]
 
   def create
-    @comments = @book.comments
-    @new_comment = @comments.build(comment_params)
-    @new_comment.user = current_user
+    comment = @book.comments.build(comment_params)
+    comment.user = current_user
 
-    flash[:alert] = @new_comment.errors.full_messages.to_sentence unless @new_comment.save
+    flash[:alert] = comment.errors.full_messages.to_sentence unless comment.save
 
     redirect_to @book
   end
 
   def destroy
-    comment_id = params[:id]
-    @book.comments.find(comment_id).destroy
-    # 削除されたコメントはcommentsオブジェクトに残ったままなので同期化する
-    @book.comments.reload
+    @book.comments.find(params[:id]).destroy
 
     flash[:notice] = t('controllers.common.notice_destroy', name: Comment.model_name.human)
 

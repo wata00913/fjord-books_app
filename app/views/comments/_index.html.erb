@@ -13,7 +13,7 @@
       <%= simple_format comment.content %>
 
       <% if current_user == comment.user %>
-        <%= link_to t('views.common.destroy'), polymorphic_path([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+        <%= link_to t('views.common.destroy'), [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
       <% end %>
     </div>
   <% end %>

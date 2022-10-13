@@ -1,6 +1,6 @@
-<% new_comment = commentable.comments.build %>
+<% comment = commentable.comments.build %>
 
-<%= form_with model: [commentable, new_comment] do |comment_form| %>
+<%= form_with model: [commentable, comment] do |comment_form| %>
   <div class="field">
     <%= comment_form.label :content %>
     <%= comment_form.text_area :content %>

@@ -4,20 +4,16 @@ class Reports::CommentsController < ApplicationController
   before_action :set_report, only: %i[create destroy]
 
   def create
-    @comments = @report.comments
-    @new_comment = @comments.build(comment_params)
-    @new_comment.user = current_user
+    comment = @report.comments.build(comment_params)
+    comment.user = current_user
 
-    flash[:alert] = @new_comment.errors.full_messages.to_sentence unless @new_comment.save
+    flash[:alert] = comment.errors.full_messages.to_sentence unless comment.save
 
     redirect_to @report
   end
 
   def destroy
-    comment_id = params[:id]
-    @report.comments.find(comment_id).destroy
-    # 削除されたコメントはcommentsオブジェクトに残ったままなので同期化する
-    @report.comments.reload
+    @report.comments.find(params[:id]).destroy
 
     flash[:notice] = t('controllers.common.notice_destroy', name: Comment.model_name.human)
 
