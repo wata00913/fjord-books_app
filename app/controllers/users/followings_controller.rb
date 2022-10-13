@@ -12,7 +12,7 @@ class Users::FollowingsController < ApplicationController
     if current_user.follow(@user)
       redirect_to @user, notice: t('.notice')
     else
-      redirect_to @user, flash: { alert: current_user.errors.map(&:message).join('\n') }
+      redirect_to @user, flash: { alert: current_user.errors.full_messages.join('\n') }
     end
   end
 
@@ -20,7 +20,7 @@ class Users::FollowingsController < ApplicationController
     if current_user.unfollow(@user)
       redirect_to @user, notice: t('.notice')
     else
-      redirect_to @user, flash: { alert: current_user.errors.map(&:message).join('\n') }
+      redirect_to @user, flash: { alert: current_user.errors.full_messages.join('\n') }
     end
   end
 

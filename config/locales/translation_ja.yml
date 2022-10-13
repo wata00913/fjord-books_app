@@ -7,7 +7,7 @@ ja:
       models:
         user:
           attributes:
-            id:
+            base:
               already_follow: フォロー済みです
               already_unfollow: フォロー解除済みです
         follow_relationship:

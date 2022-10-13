@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   def follow(other)
     if following?(other)
-      errors.add(:id, :already_follow)
+      errors.add(:base, :already_follow)
       return nil
     end
 
@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   def unfollow(other)
     unless following?(other)
-      errors.add(:id, :already_unfollow)
+      errors.add(:base, :already_unfollow)
       return nil
     end
 

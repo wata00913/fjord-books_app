@@ -1,6 +1,6 @@
 <h1><%= t '.header' %></h1>
 
-<% if @user.followings.count == 0 %>
+<% unless @user.followings.exists? %>
   <%= t '.not_exists' %>
   <br>
 <% else %>

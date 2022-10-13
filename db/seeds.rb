@@ -65,19 +65,19 @@ User.transaction do
     )
   end
 
-  sampling_users = User.order(:id).limit(3)
+  user1, user2, user3 = User.order(:id).limit(3)
 
   FollowRelationship.create!(
-    following_id: sampling_users[0].id,
-    followed_id: sampling_users[1].id
+    following_id: user1.id,
+    followed_id: user2.id
   )
   FollowRelationship.create!(
-    following_id: sampling_users[0].id,
-    followed_id: sampling_users[2].id
+    following_id: user1.id,
+    followed_id: user3.id
   )
   FollowRelationship.create!(
-    following_id: sampling_users[1].id,
-    followed_id: sampling_users[0].id
+    following_id: user2.id,
+    followed_id: user1.id
   )
 end
 
