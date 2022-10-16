@@ -22,7 +22,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が作成されました。'
   end
 
-  test 'edit a Report' do
+  test 'updating a Report' do
     visit reports_url
 
     self_report_line = all('tbody tr')[SELF_REPORT_LINE_NUM]
@@ -37,7 +37,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が更新されました。'
   end
 
-  test 'can not edit others Report' do
+  test 'other non-editable Report' do
     visit reports_url
 
     other_report_line = all('tbody tr')[OTHER_REPORT_LINE_NUM]
@@ -49,7 +49,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert has_link?('編集', count: 1)
   end
 
-  test 'destroy a Report' do
+  test 'destroying a Report' do
     visit reports_url
 
     accept_confirm do
