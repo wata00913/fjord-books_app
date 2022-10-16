@@ -1,5 +1,6 @@
 alice:
   email: sample-0@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   name: Alice
   postal_code: 999-9999
   address: 福岡県丸々市

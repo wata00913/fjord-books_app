@@ -3,3 +3,9 @@ alice_report:
   title: 初日報
   content: 日報提出しました。
   user: alice
+
+bob_report:
+  title: 日報
+  content: 2回目日報出しました。
+  user: bob
+  created_at: <%= Time.now.yesterday %>
