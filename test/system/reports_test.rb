@@ -3,22 +3,12 @@
 require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
-  COMMON_TEST_PASSWORD = 'password'
   SELF_REPORT_LINE_NUM = 0
   OTHER_REPORT_LINE_NUM = 1
 
   setup do
     @alice = users(:alice)
     login_as(@alice)
-  end
-
-  def login_as(user)
-    visit root_url
-
-    fill_in 'Eメール', with: user.email
-    fill_in 'パスワード', with: COMMON_TEST_PASSWORD
-
-    click_on 'ログイン'
   end
 
   test 'creating a Report' do
