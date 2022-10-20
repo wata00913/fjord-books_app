@@ -1,10 +1,9 @@
 <h1><%= t '.header' %></h1>
 
-<% unless @user.followers.exists? %>
-  <%= t '.not_exists' %>
-  <br>
+<% unless @followers.exists? %>
+  <p><%= t '.not_exists' %></p>
 <% else %>
-  <%= render 'users/follow_relationships/users_table', users: @user.followers %>
+  <%= render 'users/follow_relationships/users_table', users: @followers %>
 <% end %>
 
 <%= link_to t('views.common.back'), user_path(@user) %>

@@ -67,18 +67,9 @@ User.transaction do
 
   user1, user2, user3 = User.order(:id).limit(3)
 
-  FollowRelationship.create!(
-    following_id: user1.id,
-    followed_id: user2.id
-  )
-  FollowRelationship.create!(
-    following_id: user1.id,
-    followed_id: user3.id
-  )
-  FollowRelationship.create!(
-    following_id: user2.id,
-    followed_id: user1.id
-  )
+  user1.follow(user2)
+  user1.follow(user3)
+  user2.follow(user1)
 end
 
 # 画像は読み込みに時間がかかるので一部のデータだけにする

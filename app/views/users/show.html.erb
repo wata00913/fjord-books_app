@@ -34,17 +34,17 @@
 </p>
 
 <p>
-  <strong><%= link_to t('.link.followings'), followings_user_path(@user) %>:</strong>
+  <strong><%= link_to t('.link.followings'), user_followings_path(@user) %>:</strong>
   <%= @user.followings.count %>人 |
-  <strong><%= link_to t('.link.followers'), followers_user_path(@user) %>:</strong>
+  <strong><%= link_to t('.link.followers'), user_followers_path(@user) %>:</strong>
   <%= @user.followers.count %>人
 </p>
 
 <% if current_user != @user %>
   <% if current_user.following?(@user) %>
-    <%= button_to t('.button.unfollow'), unfollow_user_path(@user), method: :delete %>
+    <%= button_to t('.button.unfollow'), user_following_path(@user), method: :delete %>
   <% else %>
-    <%= button_to t('.button.follow'), follow_user_path(@user) %>
+    <%= button_to t('.button.follow'), user_followings_path(@user) %>
   <% end %>
 <% end %>
 <br>

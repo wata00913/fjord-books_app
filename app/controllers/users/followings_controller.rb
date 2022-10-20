@@ -5,7 +5,6 @@ class Users::FollowingsController < ApplicationController
 
   def index
     @followed_users = @user.followings
-    render 'index'
   end
 
   def create
@@ -27,6 +26,6 @@ class Users::FollowingsController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 end
