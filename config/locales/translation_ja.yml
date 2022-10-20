@@ -3,6 +3,17 @@ ja:
     models:
       book: 本  #g
       user: ユーザ
+    errors:
+      models:
+        user:
+          attributes:
+            base:
+              already_follow: フォロー済みです
+              already_unfollow: フォロー解除済みです
+        follow_relationship:
+          attributes:
+            followed_id:
+              must_be_other: 自身をフォローできません
 
     attributes:
       book:
@@ -16,3 +27,23 @@ ja:
         address: 住所
         self_introduction: 自己紹介文
         avatar: ユーザ画像
+  users:
+    show:
+      link:
+        followings: フォロー
+        followers: フォロワー
+      button:
+        follow: フォロー
+        unfollow: フォロー解除
+    followers:
+      index:
+        header: フォロワー一覧
+        not_exists: フォロワーはいません。
+    followings:
+      index:
+        header: フォロー一覧
+        not_exists: フォローしたユーザーはいません。
+      create:
+        notice: フォローしました
+      destroy: 
+        notice: フォロー解除しました

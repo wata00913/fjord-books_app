@@ -64,6 +64,12 @@ User.transaction do
       self_introduction: "こんにちは、#{name}です。"
     )
   end
+
+  user1, user2, user3 = User.order(:id).limit(3)
+
+  user1.follow(user2)
+  user1.follow(user3)
+  user2.follow(user1)
 end
 
 # 画像は読み込みに時間がかかるので一部のデータだけにする
