@@ -26,6 +26,11 @@ class ReportsController < ApplicationController
   end
 
   def update
+    unless operable?
+      flash[:alert] = t('controllers.common.alert_update', name: Report.model_name.human)
+      return redirect_to @report
+    end
+
     if @report.update(report_params)
       redirect_to report_url(@report), notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
@@ -34,6 +39,11 @@ class ReportsController < ApplicationController
   end
 
   def destroy
+    unless operable?
+      flash[:alert] = t('controllers.common.alert_destroy', name: Report.model_name.human)
+      return redirect_to @report
+    end
+
     @report.destroy
 
     redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
@@ -47,5 +57,9 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:title, :content)
+  end
+
+  def operable?
+    @report.user == current_user
   end
 end
