@@ -1,11 +1,12 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+alice_report:
+  title: 初日報
+  content: 日報提出しました。
+  user: alice
+  created_at: <%= Time.new(2022, 10, 1, 0, 0, 0) %>
 
-one:
-  user: one
-  title: MyString
-  content: MyText
-
-two:
-  user: two
-  title: MyString
-  content: MyText
+bob_report:
+  title: 日報
+  content: 2回目日報出しました。
+  user: bob
+  created_at: <%= Time.new(2021, 1, 1, 0, 0, 0) %>
