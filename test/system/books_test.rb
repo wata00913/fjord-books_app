@@ -44,7 +44,8 @@ class BooksTest < ApplicationSystemTestCase
   test 'updating a Book' do
     visit books_url
 
-    # アカウント編集リンクがあるため本一覧の先頭行を特定し、その行の編集リンクをクリックする
+    # click_onでは本の編集リンクを特定出来ない。そこで下記のような処理を行う。
+    # 本一覧の先頭行を特定し、その行の編集リンクをクリックする
     book_line = all('tbody tr')[0]
     book_line.click_on '編集'
 
