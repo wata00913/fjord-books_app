@@ -4,17 +4,17 @@ require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
   setup do
-    @alice_report = Report.where(title: '初日報').first
+    @alice_report = reports(:alice_report)
   end
 
   test 'self report is editable' do
-    alice = User.where(name: 'Alice').first
+    alice = users(:alice)
 
     assert @alice_report.editable?(alice)
   end
 
   test 'other report is not editable' do
-    bob = User.where(name: 'Bob').first
+    bob = users(:bob)
 
     assert_not @alice_report.editable?(bob)
   end

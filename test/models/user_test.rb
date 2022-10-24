@@ -4,10 +4,10 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   setup do
-    @alice = User.where(name: 'Alice').first
-    @bob = User.where(name: 'Bob').first
-    @carol = User.where(name: 'Carol').first
-    @anonymous = User.where(email: 'sample-4@example.com').first
+    @alice = users(:alice)
+    @bob = users(:bob)
+    @carol = users(:carol)
+    @anonymous = users(:anonymous)
   end
 
   test 'Alice follow Bob' do
