@@ -8,4 +8,4 @@ bob_report:
   title: 日報
   content: 2回目日報出しました。
   user: bob
-  created_at: <%= Time.now.yesterday %>
+  created_at: <%= Time.new(2021, 1, 1, 0, 0, 0) %>

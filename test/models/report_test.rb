@@ -18,4 +18,8 @@ class ReportTest < ActiveSupport::TestCase
 
     assert_not @alice_report.editable?(bob)
   end
+
+  test 'created_on' do
+    assert_equal Date.new(2021, 1, 1), reports(:bob_report).created_on
+  end
 end
