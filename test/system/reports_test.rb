@@ -7,8 +7,7 @@ class ReportsTest < ApplicationSystemTestCase
   OTHER_REPORT_LINE_NUM = 1
 
   setup do
-    @alice = users(:alice)
-    login_as(@alice)
+    login_as(users(:alice))
   end
 
   test 'creating a Report' do
