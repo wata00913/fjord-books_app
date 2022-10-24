@@ -10,6 +10,27 @@ class ReportsTest < ApplicationSystemTestCase
     login_as(users(:alice))
   end
 
+  test 'visiting the index' do
+    visit reports_url
+    assert_selector 'h1', text: '日報'
+
+    header = all('thead th')
+    ['タイトル', '作成者', '作成日', ''].each_with_index do |expected, idx|
+      header[idx].has_text? expected
+    end
+
+    tbody = all('tbody tr')
+    lines = [
+      ['初日報', 'Alice', '2022/10/01', '詳細'],
+      ['日報', 'Bob', '2021/01/01', '詳細']
+    ]
+    lines.each_with_index do |line, lidx|
+      line.each_with_index do |expected, cidx|
+        tbody[lidx].all('td')[cidx].has_text? expected
+      end
+    end
+  end
+
   test 'creating a Report' do
     visit reports_url
     click_on '新規作成'

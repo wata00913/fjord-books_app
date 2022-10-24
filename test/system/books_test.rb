@@ -12,6 +12,22 @@ class BooksTest < ApplicationSystemTestCase
   test 'visiting the index' do
     visit books_url
     assert_selector 'h1', text: '本'
+
+    header = all('thead th')
+    ['タイトル', 'メモ', '著者', '画像', ''].each_with_index do |expected, idx|
+      header[idx].has_text? expected
+    end
+
+    tbody = all('tbody tr')
+    lines = [
+      ['チェリー本', 'プログラミング経験者のためのRuby入門書です。', '伊藤 淳一', '詳細', '編集', '削除'],
+      ['Ruby超入門', 'Rubyの文法の基本をやさしくていねいに解説しています。', '五十嵐 邦明', '詳細', '編集', '削除']
+    ]
+    lines.each_with_index do |line, lidx|
+      line.each_with_index do |expected, cidx|
+        tbody[lidx].all('td')[cidx].has_text? expected
+      end
+    end
   end
 
   test 'creating a Book' do

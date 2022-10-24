@@ -3,6 +3,7 @@ alice_report:
   title: 初日報
   content: 日報提出しました。
   user: alice
+  created_at: <%= Time.new(2022, 10, 1, 0, 0, 0) %>
 
 bob_report:
   title: 日報
