@@ -13,7 +13,7 @@ class Books::CommentsController < ApplicationController
   end
 
   def destroy
-    @book.comments.find(params[:id]).destroy
+    find_operable_comment(@book, params[:id]).destroy
 
     flash[:notice] = t('controllers.common.notice_destroy', name: Comment.model_name.human)
 
@@ -28,5 +28,9 @@ class Books::CommentsController < ApplicationController
 
   def set_book
     @book = Book.find(params[:book_id])
+  end
+
+  def find_operable_comment(book, comment_id)
+    current_user.comments.where(commentable: book).find(comment_id)
   end
 end

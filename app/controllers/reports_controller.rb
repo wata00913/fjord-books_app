@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show edit update destroy]
+  before_action :set_report, only: %i[show edit]
+  before_action :set_operable_report, only: %i[update destroy]
 
   def index
     @reports = Report.includes(:user).order(created_at: :desc).page(params[:page])
@@ -26,11 +27,6 @@ class ReportsController < ApplicationController
   end
 
   def update
-    unless operable?
-      flash[:alert] = t('controllers.common.alert_update', name: Report.model_name.human)
-      return redirect_to @report
-    end
-
     if @report.update(report_params)
       redirect_to report_url(@report), notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
@@ -39,11 +35,6 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    unless operable?
-      flash[:alert] = t('controllers.common.alert_destroy', name: Report.model_name.human)
-      return redirect_to @report
-    end
-
     @report.destroy
 
     redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
@@ -55,11 +46,11 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
   end
 
-  def report_params
-    params.require(:report).permit(:title, :content)
+  def set_operable_report
+    @report = current_user.reports.find(params[:id])
   end
 
-  def operable?
-    @report.user == current_user
+  def report_params
+    params.require(:report).permit(:title, :content)
   end
 end

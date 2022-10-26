@@ -13,12 +13,7 @@ class Reports::CommentsController < ApplicationController
   end
 
   def destroy
-    unless operable?
-      flash[:alert] = t 'controllers.common.alert_destroy', name: Comment.model_name.human
-      return redirect_to @report
-    end
-
-    @report.comments.find(params[:id]).destroy
+    find_operable_comment(@report, params[:id]).destroy
 
     flash[:notice] = t('controllers.common.notice_destroy', name: Comment.model_name.human)
 
@@ -35,8 +30,7 @@ class Reports::CommentsController < ApplicationController
     @report = Report.find(params[:report_id])
   end
 
-  def operable?
-    comment = @report.comments.find(params[:id])
-    comment.user == current_user
+  def find_operable_comment(report, comment_id)
+    current_user.comments.where(commentable: report).find(comment_id)
   end
 end

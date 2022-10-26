@@ -245,8 +245,6 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
-      alert_update: "%{name}が更新できません。"
-      alert_destroy: "%{name}が削除できません。"
   relationships:
     create:
       notice: "フォローしました。"
