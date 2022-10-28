@@ -1,0 +1,36 @@
+<p>
+  <strong><%= Report.human_attribute_name(:user_id) %>:</strong>
+  <%= @report.user.name_or_email %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name(:created_at) %>:</strong>
+  <%= l @report.created_at %>
+
+  <strong><%= Report.human_attribute_name(:updated_at) %>:</strong>
+  <%= l @report.updated_at %>
+</p>
+
+<p>
+<strong><%= Report.human_attribute_name(:title) %>:</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+<strong><%= Report.human_attribute_name(:content) %></strong>
+</p>
+
+<div>
+  <%= simple_format @report.content %>
+</div>
+
+<% if current_user == @report.user %>
+  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+  <%= link_to t('views.common.destroy'), @report, method: :delete %> <br>
+<% end %>
+
+<%= render 'comments/index', commentable: @report %>
+
+<%= render 'comments/form', commentable: @report %>
+
+<%= link_to t('views.common.back'), reports_path %>

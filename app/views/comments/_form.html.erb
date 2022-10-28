@@ -1,0 +1,12 @@
+<% comment = commentable.comments.build %>
+
+<%= form_with model: [commentable, comment] do |comment_form| %>
+  <div class="field">
+    <%= comment_form.label :content %>
+    <%= comment_form.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= comment_form.submit %>
+  </div>
+<% end %>
