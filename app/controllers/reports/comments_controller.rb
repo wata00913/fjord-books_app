@@ -13,7 +13,8 @@ class Reports::CommentsController < ApplicationController
   end
 
   def destroy
-    find_operable_comment(@report, params[:id]).destroy
+    comment = current_user.comments.where(commentable: @report).find(params[:id])
+    comment.destroy
 
     flash[:notice] = t('controllers.common.notice_destroy', name: Comment.model_name.human)
 
@@ -28,9 +29,5 @@ class Reports::CommentsController < ApplicationController
 
   def set_report
     @report = Report.find(params[:report_id])
-  end
-
-  def find_operable_comment(report, comment_id)
-    current_user.comments.where(commentable: report).find(comment_id)
   end
 end

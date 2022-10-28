@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show edit]
-  before_action :set_operable_report, only: %i[update destroy]
+  before_action :set_report, only: %i[show]
+  before_action :set_operable_report, only: %i[edit update destroy]
 
   def index
     @reports = Report.includes(:user).order(created_at: :desc).page(params[:page])
